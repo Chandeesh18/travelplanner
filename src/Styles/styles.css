@@ -1,0 +1,227 @@
+body{
+    background-image: url('https://nypost.com/wp-content/uploads/sites/2/2022/12/travel-sales.gif');
+    
+}
+.navbar {
+    background-color: #ffffff;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 34px;
+    color: blueviolet;
+    font-weight: bolder;
+}
+
+.logo-animated {
+    font-size: 20px;
+    font-weight: bolder;
+    color: darkgray;
+    background-color: white;
+    animation: fadeIn 3s ease-in-out infinite alternate;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu li {
+    margin-left: 20px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #333333;
+    padding: 10px;
+    border: 1px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.menu li a:hover {
+    border-color: #333333;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.image-container {
+    position: relative;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    opacity: 1;
+}
+
+.image-container img {
+    width: 68vw;
+    height:795px;
+    border-radius: 20px;
+}
+
+.image-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:aqua;
+    font-size: 64px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.dot-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #333;
+}
+.common-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('https://nypost.com/wp-content/uploads/sites/2/2022/12/travel-sales.gif');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.common-layout h1 {
+    font-size: 58px;
+    margin-bottom: 20px;
+    background-color: aliceblue;
+    color: blueviolet;
+    border-radius: 20px;
+}
+.signup-content {
+    padding: 50px;
+    background-color: #fff;
+    color: #333333;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    opacity: 1.2;
+}
+.signup-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+.signin-content {
+    padding: 50px;
+    background-color: #fff;
+    color: #333333;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.signin-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.trip-form {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh;
+}
+.trip-form-content {
+    background-color:rgb(249, 252, 252);
+    padding: 60px;
+    margin: 20px;
+    color:black;
+    font-size: x-large;
+    width: 60vw;
+    height: 50vh;
+    border-radius: 90px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+.form-field,.signup-field{
+    padding: 15px;
+}
+.form-field{
+    display: flex;
+    align-items: center;
+    margin-left: 180px;
+    margin-bottom: 15px;
+}
+
+.form-field label,.signup-field {
+    width: 30%;
+    margin-right: 15px;
+}
+
+.form-field .ant-input,.signup-field {
+    flex: 1;
+    width: auto;
+}
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        border: 1px solid #dddddd;
+        padding: 10px 0;
+        z-index: 1;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+}
