@@ -1,20 +1,62 @@
 body{
     background-image: url('https://nypost.com/wp-content/uploads/sites/2/2022/12/travel-sales.gif');
-    
+    font-family: "TwitterChirp, -apple-system, BlinkMacSystemFont";
 }
-.navbar {
-    background-color: #ffffff;
-    border: 1px solid white;
-    border-radius: 20px;
-    padding: 10px 20px;
+.footer {
+    background-color: #fafbfb;
+    color: #fff;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+.foottext{
+    color: #066a45;
+    font-size: large;
+    
+    margin-left: -10%;
+}
 .logo-container {
     display: flex;
     align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+.imgfoot{
+    width:30px;
+    height: 30px;
+    margin-left: -100%;
+    margin-right: 30px;
+}
+
+.navbar {
+background-color: #ffffff;
+    top: 0;
+    border: 1px solid white;
+    /* border-radius: 20px; */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    width: -webkit-fill-available;
+
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+.aa{
+    font-size: x-large;
+    margin-left: -70%;
 }
 
 .logo {
@@ -30,7 +72,17 @@ body{
     background-color: white;
     animation: fadeIn 3s ease-in-out infinite alternate;
 }
+.btnstart{
+    color:white;
+    background-color: rgb(92, 243, 92);
+    width: 280px;
+    height: 60px;
+    opacity:1.4;
+    font-size: 30px;
+    margin-top: 100px;
+    border-radius:10px;
 
+}
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -72,46 +124,45 @@ body{
 
 .image-container {
     position: relative;
-    margin-top: 50px;
-    margin-left: 50px;
-    margin-right: 50px;
-    opacity: 1;
+        /* margin-top: 50px; */
+        margin-left: 50px;
+        margin-right: 50px;
+        opacity: 1;
 }
 
 .image-container img {
     width: 68vw;
-    height:795px;
+    position: relative;
+    margin-top: 6%;
+    height: 795px;
     border-radius: 20px;
+   
 }
 
 .image-text {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color:aqua;
+    left: 40%;
+    transform: translate(-70%, -40%);
+    color:rgb(42, 42, 203);
     font-size: 64px;
-    font-weight: bold;
+    font-weight: 700;
     text-align: center;
+    padding: 20px;
+    background-color: rgba(238, 254, 254, 0.969);
+    opacity: 0.9;
+    height: 100px;
 }
-
-.dot-container {
+.ptag{
+    color: rgb(16, 16, 16);
+    transform: translate(1%, 10%);
+    margin-top: -35px;
+    font-size: 34px;
+    font-weight:300;
+    padding-bottom: 40px;
     text-align: center;
-    margin-top: 10px;
-}
-
-.dot {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    background-color: #bbb;
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-}
-
-.dot.active {
-    background-color: #333;
+    margin-bottom: -13%;
+    background-color: #fff;
 }
 .common-layout {
     display: flex;
@@ -128,30 +179,32 @@ body{
 .common-layout h1 {
     font-size: 58px;
     margin-bottom: 20px;
-    background-color: aliceblue;
+background-color: rgba(248, 253, 253, 0.969);
     color: blueviolet;
     border-radius: 20px;
+    opacity: 0.9;
 }
 .signup-content {
     padding: 50px;
-    background-color: #fff;
-    color: #333333;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
+    background-color: rgba(245, 253, 253, 0.969);
+    color: #e4cfcf;
+    border-radius: 30px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    opacity: 1.2;
+    opacity: 0.9;
 }
 .signup-content h2 {
     font-size: 36px;
+    color: #333333;
+    font-weight: 600;
     margin-bottom: 20px;
 }
 .signin-content {
     padding: 50px;
-    background-color: #fff;
+    background-color: rgba(248, 253, 253, 0.969);
     color: #333333;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
+    border-radius: 30px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    opacity: 0.9;
 }
 
 .signin-content h2 {
@@ -166,16 +219,29 @@ body{
     height: 100vh;
 }
 .trip-form-content {
-    background-color:rgb(249, 252, 252);
+    background-color: rgba(238, 254, 254, 0.969);
+        opacity: 1;
     padding: 60px;
     margin: 20px;
     color:black;
     font-size: x-large;
-    width: 60vw;
+    width: 40vw;
     height: 50vh;
     border-radius: 90px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
+}
+.trip-form-con {
+    background-color: rgba(238, 254, 254, 0.969);
+        opacity: 1;
+    padding: 60px;
+    margin: 20px;
+    color: black;
+    font-size: x-large;
+    width: 60vw;
+    height: auto;
+    border-radius: 90px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .form-field,.signup-field{
     padding: 15px;
@@ -196,32 +262,149 @@ body{
     flex: 1;
     width: auto;
 }
+.dropbtn{
+    background-color: aqua;
+    font-size: 14px;
+    border-radius: 90px;
+    border: #bbb 1px;
+}
+.btn{
+   margin-top:15vh;
+   padding-left: 12px;
+   margin-left: 5vw;
+    margin-right: 7vw;
+    background-color: aquamarine;
+    border-radius: 15px;
+    font-size: 40px;
+}
+.btntabel{
+    margin-right: 22px;
+
+}
 @media (max-width: 768px) {
-    .menu {
-        display: none;
+
+    .footer {
         flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: #ffffff;
-        border: 1px solid #dddddd;
-        padding: 10px 0;
-        z-index: 1;
+        align-items: center;
+        padding: 10px;
     }
 
-    .menu.active {
-        display: flex;
+    .foottext {
+        margin-left: 0;
+        font-size: small;
+        margin-top: 10px;
+        text-align: center;
     }
 
-    .menu-toggle {
-        display: block;
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-size: 16px;
+    .imgfoot {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 10px;
+    }
+
+    .logo-container {
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    .logo {
+        margin-right: 0;
+    }
+
+    .navbar {
+        padding: 10px;
+    }
+
+    .common-layout h1 {
+        font-size: 40px;
+    }
+
+    .signup-content,
+    .signin-content {
+        padding: 30px;
+    }
+
+    .trip-form-content,
+    .trip-form-con {
+        width: 80vw;
+        padding: 30px;
+    }
+
+    .form-field {
+        margin-left: 0;
+    }
+
+    .form-field label,
+    .signup-field {
+        width: 40%;
+    }
+
+    .form-field .ant-input,
+    .signup-field {
+        width: 60%;
+    }
+
+    .btnstart,
+    .btn {
+        width: 200px;
+        font-size: 24px;
+        margin-top: 50px;
+    }
+
+    .btntabel {
+        margin-right: 10px;
+    }
+        .image-text {
+            top: 35%;
+            opacity: 0.9;
+            height: 600px;
+        }
+}
+
+@media (max-width: 576px) {
+    .navbar {
+        padding: 5px;
+    }
+
+    .common-layout h1 {
+        font-size: 30px;
+    }
+
+    .signup-content,
+    .signin-content {
+        padding: 20px;
+    }
+
+    .trip-form-content,
+    .trip-form-con {
+        width: 90vw;
+        padding: 20px;
+    }
+
+    .form-field label,
+    .signup-field {
+        width: 50%;
+    }
+
+    .form-field .ant-input,
+    .signup-field {
+        width: 50%;
+    }
+
+    .btnstart,
+    .btn {
+        width: 180px;
+        font-size: 20px;
+        margin-top: 40px;
+    }
+    .image-text {
+        top: 45%;
+        font-size: medium;
+        opacity: 0.9;
+        height: 300px;
+    }
+    .ptag{
+        margin-top: 20px;
+        font-size:medium;
     }
 }

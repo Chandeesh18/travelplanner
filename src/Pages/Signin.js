@@ -1,16 +1,24 @@
 import React from 'react';
 import { Form, Input, Button } from 'antd';
+import { useDispatch, useSelector } from 'react-redux';
 import CommonLayout from '../Components/Mainpage/CommonLayout';
-import { useDispatch } from 'react-redux';
 import '../Styles/styles.css';
-import { signIn } from '../actions/Authactions';
+import { signIn } from '../actions/AuthenticationAction/Authactions';
+import { useNavigate } from 'react-router-dom';
 
 function SignInLayout({ children }) {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const userData = useSelector(state => state.auth.userData);
+  const navigate= useNavigate();
+
   const onFinish = (values) => {
     dispatch(signIn(values));
     console.log('Received values:', values);
   };
+
+  if (userData) {
+    navigate('/');
+  }
 
   return (
     <CommonLayout>
@@ -24,7 +32,7 @@ function SignInLayout({ children }) {
           <Form.Item
             label="Email"
             name="email"
-             className="signup-field"
+            className="signup-field"
             rules={[
               { required: true, message: 'Please input your email!' },
               { type: 'email', message: 'Please input a valid email!' },
@@ -35,8 +43,11 @@ function SignInLayout({ children }) {
           <Form.Item
             label="Password"
             name="password"
-             className="signup-field"
-            rules={[{ required: true, message: 'Please input your password!',min: 8, message: 'Password must be at least 8 characters!' }]}
+            className="signup-field"
+            rules={[
+              { required: true, message: 'Please input your password!' },
+              { min: 8, message: 'Password must be at least 8 characters!' }
+            ]}
           >
             <Input.Password />
           </Form.Item>

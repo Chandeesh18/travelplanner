@@ -1,17 +1,13 @@
 const initialState = {
-  user:[],
   userData: null
 };
 
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SIGN_IN':
-        console.log("signin")
-       const user = state.user.find(user => user.email === action.payload.email && user.password === action.payload.password);
-       console.log(user);
+        console.log("signin",action.payload)
       return {
-        ...state,
-        userData: user
+        userData: action.payload
       };
 
     case 'SIGN_UP':
@@ -22,6 +18,13 @@ const authReducer = (state = initialState, action) => {
         user: [...state.user, action.payload],
         error: null
       };
+      case 'SIGN_OUT':
+        const nav=action.payload;
+        localStorage.removeItem('email');
+        nav("/");
+        return{
+            user:[]
+        }
     default:
       return state;
   }

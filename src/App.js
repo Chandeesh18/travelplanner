@@ -6,6 +6,7 @@ import SignInLayout from './Pages/Signin';
 import SignUpLayout from './Pages/Signup';
 import TripForm from './Pages/CreateTrip';
 import Approute from './Router/Routes';
+import Footer from './Components/Footer';
 
 function App() {
   return (

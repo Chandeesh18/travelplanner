@@ -3,14 +3,16 @@ import { Form, Input, Button } from 'antd';
 import { useDispatch } from 'react-redux';
 import CommonLayout from '../Components/Mainpage/CommonLayout';
 import '../Styles/styles.css';
-import { confirmPasswordValidation } from '../Validation/ValidConformPassword';
-import { signUp } from '../actions/Authactions';
+import { signUp } from '../actions/AuthenticationAction/Authactions';
+import { useNavigate } from 'react-router-dom';
 
 function SignUpLayout({ children }) {
      const dispatch = useDispatch();
+     const navigate= useNavigate();
   const onFinish = (values) => {
+      console.log('Received values:', values);
     dispatch(signUp(values));
-    console.log('Received values:', values);
+    navigate('/signin');
   };
 
   return (
