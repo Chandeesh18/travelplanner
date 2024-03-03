@@ -24,7 +24,7 @@ You may also see any lint errors in the console.
 
 ### `npm test`
 
-Launches the test runner in interactive watch mode. This command is useful for running test cases that are not directly connected with Firebase.
+Launches the test runner in interactive watch mode. This command is useful for running test cases that are not directly connected with Firebase.Firebase needed permission.
 
 ### `npm run build`
 
