@@ -7,7 +7,7 @@ Description:
 
 ## Clone the Repository:
 
-   git clone [repository URL]
+   git clone https://github.com/Chandeesh18/travelplanner.git
 
 ## Install Dependencies:
 
@@ -38,5 +38,16 @@ Your app is ready to be deployed!
 ## Deployed App
 ## https://65e40e64b69336470a6d8995--ornate-monstera-6df6a8.netlify.app/
 
+Screenshots:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![image](https://github.com/Chandeesh18/travelplanner/assets/77477411/be22822e-3437-46af-a50d-b4229e0e6a20)
+![image](https://github.com/Chandeesh18/travelplanner/assets/77477411/932ea321-4ecf-4a54-9a8c-663aad63abe7)
+![image](https://github.com/Chandeesh18/travelplanner/assets/77477411/225165b1-7834-4200-bba3-66457e901b0c)
+![image](https://github.com/Chandeesh18/travelplanner/assets/77477411/49edbf04-bba3-4317-b156-5c9ce2ba2d1c)
+![image](https://github.com/Chandeesh18/travelplanner/assets/77477411/a12b8098-4bcd-478f-a4d6-6ddfa66d8abf)
+![image](https://github.com/Chandeesh18/travelplanner/assets/77477411/a41d4f0f-f452-4d3d-8504-0e58c9fc20eb)
+![image](https://github.com/Chandeesh18/travelplanner/assets/77477411/1b35b92a-11ee-47f0-a911-fc96d4a67209)
+![image](https://github.com/Chandeesh18/travelplanner/assets/77477411/974fd544-20a3-4024-a9ea-8a829e85f975)
+![image](https://github.com/Chandeesh18/travelplanner/assets/77477411/2c3c04cc-c844-49e9-bc43-d966239f341e)
+
+
