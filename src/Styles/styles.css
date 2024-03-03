@@ -12,6 +12,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 .foottext{
@@ -294,15 +295,17 @@ background-color: rgba(248, 253, 253, 0.969);
     }
 
     .foottext {
-        margin-left: 0;
+        width: 100%;
+        overflow: auto;
         font-size: small;
-        margin-top: 10px;
-        text-align: center;
+        padding: 5px;
+        margin: 0;
+        text-align: left;
     }
 
     .imgfoot {
         margin-left: 0;
-        margin-right: 0;
+        margin-right: 40px;
         margin-top: 10px;
     }
 
@@ -318,6 +321,14 @@ background-color: rgba(248, 253, 253, 0.969);
     .navbar {
         padding: 10px;
     }
+    .menu li a {
+        padding: 0px;
+        font-size: 12px;
+    }
+    .antd-table-cell{
+        padding: 0px;
+        width: auto;
+    }
 
     .common-layout h1 {
         font-size: 40px;
@@ -325,9 +336,12 @@ background-color: rgba(248, 253, 253, 0.969);
 
     .signup-content,
     .signin-content {
-        padding: 30px;
-    }
+        width:320px;
 
+    }
+    .ant-input,.ant-input-affix-wrapper {
+        width: 250px;
+    }
     .trip-form-content,
     .trip-form-con {
         width: 80vw;
@@ -371,20 +385,58 @@ background-color: rgba(248, 253, 253, 0.969);
     }
 
     .common-layout h1 {
+        margin-top: -120px;
         font-size: 30px;
     }
 
     .signup-content,
     .signin-content {
-        padding: 20px;
-    }
+        padding: 0px;
 
+    }
+    .ant-form-item{
+        padding-top:0px;
+    }
+    .signup-content{
+        margin-top: -30px;
+        padding-top: 20px;
+        max-height: 60vh;
+        overflow-y: auto;
+        opacity: 1;
+    }
     .trip-form-content,
     .trip-form-con {
-        width: 90vw;
-        padding: 20px;
+        width: auto;
+        padding: 10px;
+          
     }
+    .table-container {
+        width: 400px;
+        overflow-x: scroll;
+    }
+    .trip-form-con .table-container {
+        margin-top:15vh;
+        width:400px;
+        overflow-x: scroll;
+    }
+    .trip-form-con{
+        width:100vw;
+        height:40vh;
 
+    }
+    .trip-form-content{
+        margin-top:0vh;
+    }
+    .trip{
+        margin-top: 20vh;
+        padding-top: 0px;
+        height: 120vh;
+        width: 100vw;
+        overflow-y: scroll;
+    }
+    .trip-form-content p:first-child{
+       margin-bottom: 140px;
+    }
     .form-field label,
     .signup-field {
         width: 50%;

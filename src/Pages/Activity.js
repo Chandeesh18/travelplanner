@@ -52,7 +52,7 @@ const { Column } = Table;
     <CommonLayout>
       <div>
         {trip && (
-          <div className='trip-form-content'>
+          <div className='trip-form-content trip'>
             <h1>Activities for Trip {trip.destination} ✈️</h1>
             <p>Start Date: {formatDate(trip.start)}</p>
             <p>End Date: {formatDate(trip.end)}</p>
@@ -60,6 +60,7 @@ const { Column } = Table;
             <Button type="primary" className='btntabel' onClick={handleCreateActivity}>
               Create Activity
             </Button>
+            <div className="table-container">
           <Table className='aa' dataSource={activities}>
             <Column
               title="Title"
@@ -78,6 +79,7 @@ const { Column } = Table;
               )}
             />
           </Table>
+          </div>
 
           </div>
         )}
