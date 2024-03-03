@@ -37,8 +37,7 @@ navigate('/mytrips');
 dispatch(getTrip());
 };
 
-
-  return (
+return (
     <CommonLayout>
       <div className="trip-form">
         <div className="white-circle"></div>

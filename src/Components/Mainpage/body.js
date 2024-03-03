@@ -11,8 +11,7 @@ function Body() {
               <div className="image-text">
                 Welcome to A2Z Travel Plan
                 <div className='ptag'>
-                <p>Your Next Journey, Optimized
-Build, personalize, and optimize your itineraries with our free trip planner. Designed for vacations, workations, and everyday adventures.</p></div>
+                <p>Your Next Journey, Optimized Build, personalize, and optimize your itineraries with our free trip planner. Designed for vacations, workations, and everyday adventures.</p></div>
            {userData ? (
                   <Link to="/createtrip"><Button type="default"  className='btnstart'>Create Trip</Button></Link>
                 ) : (

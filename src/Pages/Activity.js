@@ -6,7 +6,6 @@ import CommonLayout from '../Components/Mainpage/CommonLayout';
 import CreateActivityModal from '../Components/Activitymodel';
 import { createActivity } from '../actions/ActivityActions/createActivity';
 import { getactivity } from '../actions/ActivityActions/GetActivity';
-import { getTrip } from '../actions/TripActions/GetTrip';
 
 function TripActivitiesPage() {
 const { Column } = Table;
