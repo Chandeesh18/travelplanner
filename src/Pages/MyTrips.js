@@ -119,7 +119,9 @@ function MyTripsPage() {
     <CommonLayout>
       <div className="trip-form-con">
         <h1>My Trips</h1>
-        <Table dataSource={trips} columns={columns} />
+         <div className="table-container">
+                <Table dataSource={trips} columns={columns} />
+            </div>
 
         <Modal
         title="Edit Trip"
