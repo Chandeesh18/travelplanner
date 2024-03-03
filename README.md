@@ -11,7 +11,7 @@ Description:
 
 ## Install Dependencies:
 
-  cd [your_application_directory]
+  cd travelplanner
   npm install
 
 ### `npm start`
@@ -24,8 +24,7 @@ You may also see any lint errors in the console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests]
+Launches the test runner in interactive watch mode. This command is useful for running test cases that are not directly connected with Firebase.
 
 ### `npm run build`
 
