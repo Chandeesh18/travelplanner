@@ -15,13 +15,17 @@ function TripForm({ addTrip }) {
   const [slots, setSlots] = useState('');
 
  const handleSubmit = () => {
+  if (!destination || !startDate || !endDate || !slots) {
+    message.error("Please fill in all fields.");
+    return; 
+  }
   const tripData = {
     email:localStorage.getItem('email'),
     destination,
-    start: startDate.toDate(),
-    end: endDate.toDate(), 
+    start:startDate? startDate.toDate():"00 March 00 at 00:00:00 UTC+5:30",
+    end: endDate?endDate.toDate():"00 March 00 at 00:00:00 UTC+5:30", 
     slot: parseInt(slots), 
-};
+  };
 
 addTrip(tripData);
 setDestination('');

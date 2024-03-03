@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Table, Button, Modal, Form, Input, DatePicker } from 'antd';
+import { Table, Button, Modal, Form, Input, DatePicker,message } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import CommonLayout from '../Components/Mainpage/CommonLayout';
 import { getTrip } from '../actions/TripActions/GetTrip';
@@ -23,6 +23,7 @@ function MyTripsPage() {
   const handleDelete = (tripId) => {
     dispatch(deleteTrip(tripId));
     dispatch(getTrip());
+    message.success({content:"Deleted Sucessfully", duration:'0.9'});
   };
 
   const handleEdit = (trip) => {
@@ -43,20 +44,30 @@ function MyTripsPage() {
   };
 
   const handleModalSubmit = () => {
-  form.validateFields().then(values => {
-    const { destination, start, end, slots } = values;
-    const updatedTrip = {
-      ...selectedTrip,
-      destination,
-      start: startDate ? startDate.toDate() : null,
-      end: endDate ? endDate.toDate() : null,
-      slot:parseInt(slots),
-    };
-    dispatch(EditTrip(updatedTrip,selectedTrip.id));
-    setModalVisible(false);
-    dispatch(getTrip());
-  });
-};
+    form.validateFields().then(values => {
+        const { destination, startDate, endDate, slots } = values;
+        if (!destination || !startDate || !endDate || !slots) {
+        message.error("Please fill in all fields.");
+        return;
+        }
+
+        const updatedTrip = {
+        ...selectedTrip,
+        destination,
+        start: startDate.toDate(),
+        end: endDate.toDate(),
+        slot: parseInt(slots),
+        };
+
+        dispatch(EditTrip(updatedTrip, selectedTrip.id));
+        setModalVisible(false);
+        dispatch(getTrip());
+        message.success({ content: "Edited Successfully", duration: '0.9' });
+    }).catch(errorInfo => {
+        console.log('Validation failed:', errorInfo);
+    });
+  };
+
 
 
   const columns = [
@@ -111,18 +122,18 @@ function MyTripsPage() {
         <Table dataSource={trips} columns={columns} />
 
         <Modal
-  title="Edit Trip"
-  visible={modalVisible}
-  onCancel={handleModalCancel}
-  footer={[
-    <Button key="cancel" onClick={handleModalCancel}>
-      Cancel
-    </Button>,
-    <Button key="submit" type="primary" onClick={handleModalSubmit}>
-      Submit
-    </Button>,
-  ]}
->
+        title="Edit Trip"
+        visible={modalVisible}
+        onCancel={handleModalCancel}
+        footer={[
+            <Button key="cancel" onClick={handleModalCancel}>
+            Cancel
+            </Button>,
+            <Button key="submit" type="primary" onClick={handleModalSubmit}>
+            Submit
+            </Button>,
+        ]}
+        >
   <Form form={form} layout="vertical">
     <Form.Item
       name="destination"

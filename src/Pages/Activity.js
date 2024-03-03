@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { Button, List } from 'antd';
+import { Button,message,Table} from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import CommonLayout from '../Components/Mainpage/CommonLayout';
 import CreateActivityModal from '../Components/Activitymodel';
 import { createActivity } from '../actions/ActivityActions/createActivity';
 import { getactivity } from '../actions/ActivityActions/GetActivity';
+import { getTrip } from '../actions/TripActions/GetTrip';
 
 function TripActivitiesPage() {
+const { Column } = Table;
   const { tripId } = useParams();
   const dispatch = useDispatch();
   const trip = useSelector(state => state.getdata.trips.find(trip => trip.id === tripId));
@@ -31,6 +33,10 @@ function TripActivitiesPage() {
   };
 
   const handleModalSubmit = values => {
+    if (!values.title || !values.description) {
+    message.error("Please fill in all fields.");
+    return; 
+    }
     const activityData = {
       tripId: trip.id,
       title: values.title,
@@ -40,6 +46,7 @@ function TripActivitiesPage() {
     console.log('Submitted values:', values);
     setModalVisible(false);
     dispatch(getactivity(tripId));
+    message.success({content:"Activity created", duration:'0.9'});
   };
 
   return (
@@ -54,15 +61,25 @@ function TripActivitiesPage() {
             <Button type="primary" className='btntabel' onClick={handleCreateActivity}>
               Create Activity
             </Button>
-            <List className='aa'
-              dataSource={activities}
-              renderItem={item => (
-                <List.Item>
-                  🚀{item.docData.title}➡️
-                  {item.docData.description}
-                </List.Item>
+          <Table className='aa' dataSource={activities}>
+            <Column
+              title="Title"
+              dataIndex="docData.title"
+              key="title"
+              render={(text, record) => (
+                <span>🚀{record.docData.title}</span>
               )}
             />
+            <Column
+              title="Description"
+              dataIndex="docData.description"
+              key="description"
+              render={(text, record) => (
+                <span>{record.docData.description}</span>
+              )}
+            />
+          </Table>
+
           </div>
         )}
         <CreateActivityModal
